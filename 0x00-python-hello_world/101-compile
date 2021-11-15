@@ -1,2 +1,2 @@
 #!/bin/bash
-python3.4 -m py_compile $PYFILE; export PYFILE=my_main.py $PYFILE'c'
+python3. -m py_compile $PYFILE; export PYFILE=my_main.py $PYFILEc
