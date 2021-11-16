@@ -1,9 +1,10 @@
-#include "lists.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "lists.h"
+
 /**
  * check_cycle - checks if a singly linked list has a cycle in it
- * @listint_t: input head
+ * @list: input head
  * Return: 0 if there is no cycle, 1 if there is a cycle
  */
 
