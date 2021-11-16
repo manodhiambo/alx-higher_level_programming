@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include"lists.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "lists.h"
 
 /**
  * insert_node - inserts new node to linked list
