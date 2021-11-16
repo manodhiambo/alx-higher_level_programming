@@ -4,7 +4,7 @@ number = random.randit(-10, 10)
 if (number > 0):
     print("{:d} is positive\n".formart(number))
 
-elif (number < 0);
+elif (number < 0):
 print("{:d} is negative\n".formart(number))
 
 else:
