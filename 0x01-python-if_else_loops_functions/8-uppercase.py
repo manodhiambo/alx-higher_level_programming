@@ -4,5 +4,5 @@ def uppercase(str):
         n = ord(str[c])
         if (n >= 97 and n <= 122):
             n -= 32
-            print("{}\n".format(chr(n)), end="")
-            print()
+        print("{}".format(chr(n)), end="")
+    print()
