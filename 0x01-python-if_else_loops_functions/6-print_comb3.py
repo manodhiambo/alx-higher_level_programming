@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-for y in range(9):
-    for z in range(1, 10):
-        if (z < y or z == y):
+for x in range(9):
+    for y in range(1, 10):
+        if (y < x or y == x):
             continue
-        if (y != 8):
-            print("{:d}{:d}\n".format(y, z), end=', ')
+        if (x != 8):
+            print("{:d}{:d}".format(x, y), end=', ')
         else:
-            print("{:d}{:d}\n".format(y, z))
+            print("{:d}{:d}".format(x, y))
