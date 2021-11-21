@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Python.h"
+#include <Python.h>
 /**
  * print_python_list_info - prints info on a pyobject
  * @p: python object
@@ -24,3 +24,4 @@ void print_python_list_info(PyObject *p)
 			printf("Element %d: %s\n", i, Py_TYPE(temp)->tp_name);
 		}
 	}
+}
