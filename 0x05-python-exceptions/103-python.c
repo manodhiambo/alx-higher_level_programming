@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-void print_python_bytes(PyObject *p);
-void print_python_float(PyObject *p);
+#include "Python.h"
 
 /**
  * print_python_list - prints some basic info about Python lists
