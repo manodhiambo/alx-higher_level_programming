@@ -14,11 +14,11 @@ First, Import module and function
 
 Integers and floats.
 
-	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 2)
-        [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+	>>> matrix_divided([[2, 4, 1],[7, 9, 5]], 2)
+        [[1.0, 2.0, 0.5], [3.5, 4.5, 2.5]]
 
-	>>> matrix_divided([[1]], 2)
-        [[0.5]]
+	>>> matrix_divided([[3]], 2)
+        [[1.5]]
 
 	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 3.14)
         [[0.32, 0.64, 0.96], [1.27, 1.59, 1.91]]
@@ -46,12 +46,12 @@ Infinite
 Invalid Arguments
 
 	matrix = [[1, 2, 3],[4, 5, 6]]
-	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 'a')
+	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], 'x')
 	Traceback (most recent call last):
 		  ...
 	TypeError: div must be a number
 
-	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], "hello")
+	>>> matrix_divided([[1, 2, 3],[4, 5, 6]], "Hello")
 	Traceback (most recent call last):
 		  ...
 	TypeError: div must be a number
