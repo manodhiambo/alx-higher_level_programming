@@ -5,7 +5,7 @@ Class Rectangle: Defines a Rectangle
 
 
 class Rectangle:
-    """ class that defines a Rectangle with attributes and public methods  (based on 6-rectangle.py)"""
+    """ class that defines a Rectangle with attributes and public methods  """
 
     number_of_instances = 0
     print_symbol = '#'
