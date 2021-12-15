@@ -1,160 +1,246 @@
-===============================
- Testing module 0-add_integer.py
-===============================
+====================================
+ Doctest for add_integer function
+====================================
 
-``add_integer(a, b=98)`` returns the addition of two arguments.  For numbers,
-a and b must be integers or floats, otherwise raise a TypeError exception.
 
-Numbers
-=======
+``add_integer(a, b)`` returns the addition of its two arguments in
+equivalence to the '+' operator. The function arguments must be
+integers or floats for it to work, otherwise an error is raised
 
-First, Import module and function
 
-      >>> add_integer = __import__('0-add_integer').add_integer
+Import function
+=================
 
-Validate positive Integers
+    >>> add_integer = __import__("0-add_integer").add_integer
 
-      >>> add_integer(1, 2)
-      3
+Add Two Integers
+==================
 
-Validate negative Integers
+    >>> add_integer(2, 3)
+    5
 
-      >>> add_integer(-1, 2)
-      1
+    >>> add_integer(-2, 3)
+    1
 
-      >>> add_integer(1, -2)
-      -1
+    >>> add_integer(2, -3)
+    -1
 
-      >>> add_integer(-1, -2)
-      -3
+    >>> add_integer(-2, -3)
+    -5
 
-Now, it also works with floating-point values.
+Add Two Floats
+===============
 
-     >>> add_integer(100.3, -2.0)
-     98
+    >>> add_integer(2.0, 3.0)
+    5
 
-     >>> add_integer(100.3, 100.3)
-     200
+    >>> add_integer(-2.0, 3.0)
+    1
 
-     >>> add_integer(-100.3, -2.0)
-     -102
+    >>> add_integer(2, -3.0)
+    -1
 
-     >>> add_integer(-2.0, 3.0)
-     1
+    >>> add_integer(-2.0, -3.0)
+    -5
 
 Non-Numbers
 ===========
 
-with String value.
+If any of the arguments of the function are not integer or float
+it will raise a TypeError
 
-     >>> add_integer(4, "School")
-     Traceback (most recent call last):
-     ...
-     TypeError: b must be an integer
 
-     >>> add_integer("school", 100.3)
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
+Character
 
-     >>> add_integer("Holberton", "School")
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
+    >>> add_integer('a', 2)
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
 
-None Value.
+    >>> add_integer(2, 'b')
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
 
-     >>> add_integer(None)
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
+String
 
-     >>> add_integer(None, 2)
-     Traceback (most recent call last):
+    >>> add_integer("Hello", 2)
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+
+    >>> add_integer(2, "Hello")
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
+
+List
+
+    >>> add_integer([3, 2], 2)
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+
+    >>> add_integer(2, [3, 2])
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
+
+Tuple
+
+    >>> add_integer((3, 2), 2)
+    Traceback (most recent call last):
           ...
-     TypeError: a must be an integer
+    TypeError: a must be an integer
 
-     >>> add_integer(2, None)
-     Traceback (most recent call last):
-     ...
-     TypeError: b must be an integer
 
-     >>> add_integer("School", None)
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
+    >>> add_integer(2, (3, 2))
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
 
-Not a number.
+Set
 
-     >>> add_integer(float('nan'))
-     Traceback (most recent call last):
-     ...
-     ValueError: cannot convert float NaN to integer
+    >>> add_integer({3, 2}, 2)
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
 
-Overflow.
 
-     >>> add_integer(float('inf'))
-     Traceback (most recent call last):
-     ...
-     OverflowError: cannot convert float infinity to integer
+    >>> add_integer(2, {3, 2})
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
 
-Data Structures
+
+Dict
+
+    >>> add_integer({"H": 2}, 2)
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+
+    >>> add_integer(2, {"H": 2})
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
+
+
+None
+
+    >>> add_integer(None, 2)
+    Traceback (most recent call last):
+          ...
+    TypeError: a must be an integer
+
+
+    >>> add_integer(2, None)
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
+
+
+Missing Second Argument
+========================
+If the second argument 'b' is not provided, this variable will
+take the value 98 by default
+
+    >>> add_integer(2)
+    100
+
+    >>> add_integer(2.0)
+    100
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+
+    >>> add_integer("Hello")
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+    >>> add_integer({"H": 2})
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+    >>> add_integer([1])
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+    >>> add_integer((1, 2))
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+    >>> add_integer({1, 2})
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+No Arguments
 ===============
 
-Validate List type
-
-     >>> add_integer([1, 2], 3)
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
-
-     >>> add_integer(3, [1, 2])
-     Traceback (most recent call last):
-     ...
-     TypeError: b must be an integer
-
-Validate Tuple type
-
-     >>> add_integer((1, 2), 3)
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
-
-     >>> add_integer(3, (1, 2))
-     Traceback (most recent call last):
-     ...
-     TypeError: b must be an integer
-
-Validate Dictionaries
-
-     >>> add_integer({"K1": 1}, 2)
-     Traceback (most recent call last):
-     ...
-     TypeError: a must be an integer
+If no arguments are given, an error will appear asking for at least
+1 argument
 
 
-     >>> add_integer(3, {"k2": 2})
-     Traceback (most recent call last):
-     ...
-     TypeError: b must be an integer
-
-Validate Set
-
-     >>> add_integer({3, 2}, 2)
-     Traceback (most recent call last):
+    >>> add_integer()
+    Traceback (most recent call last):
               ...
-     TypeError: a must be an integer
+    TypeError: add_integer() missing 1 required positional argument: 'a'
 
 
-     >>> add_integer(2, {3, 2})
-     Traceback (most recent call last):
+Not a Number
+=============
+
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
               ...
-     TypeError: b must be an integer
+    ValueError: cannot convert float NaN to integer
 
-No args
-=======
-
-     >>> add_integer()
-     Traceback (most recent call last):
+    >>> add_integer(float('nan'), 2)
+    Traceback (most recent call last):
               ...
-     TypeError: add_integer() missing 1 required positional argument: 'a'
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(2, float('nan'))
+    Traceback (most recent call last):
+              ...
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(float('nan'), float('nan'))
+    Traceback (most recent call last):
+              ...
+    ValueError: cannot convert float NaN to integer
+
+Overflow
+===============
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+              ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('inf'), 2)
+    Traceback (most recent call last):
+              ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(2, float('inf'))
+    Traceback (most recent call last):
+              ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('inf'), float('inf'))
+    Traceback (most recent call last):
+              ...
+    OverflowError: cannot convert float infinity to integer
