@@ -14,32 +14,32 @@ First, Import module and function
 
 Validate positive Integers
 
-      >>> add_integer(2, 2)
-      4
+      >>> add_integer(1, 2)
+      3
 
 Validate negative Integers
 
-      >>> add_integer(-3, 4)
+      >>> add_integer(-1, 2)
       1
 
-      >>> add_integer(1, -3)
-      -2
+      >>> add_integer(1, -2)
+      -1
 
-      >>> add_integer(-1, -1)
-      -2
+      >>> add_integer(-1, -2)
+      -3
 
 Now, it also works with floating-point values.
 
-     >>> add_integer(100.3, -1.0)
-     99
+     >>> add_integer(100.3, -2.0)
+     98
 
-     >>> add_integer(50.2, 50.2)
-     100
+     >>> add_integer(100.3, 100.3)
+     200
 
-     >>> add_integer(-50.3, -2.0)
-     -52
+     >>> add_integer(-100.3, -2.0)
+     -102
 
-     >>> add_integer(-5.0, 6.0)
+     >>> add_integer(-2.0, 3.0)
      1
 
 Non-Numbers
@@ -47,12 +47,12 @@ Non-Numbers
 
 with String value.
 
-     >>> add_integer(2, "School")
+     >>> add_integer(4, "School")
      Traceback (most recent call last):
      ...
      TypeError: b must be an integer
 
-     >>> add_integer("school", 50.3)
+     >>> add_integer("school", 100.3)
      Traceback (most recent call last):
      ...
      TypeError: a must be an integer
@@ -69,12 +69,12 @@ None Value.
      ...
      TypeError: a must be an integer
 
-     >>> add_integer(None, 4)
+     >>> add_integer(None, 2)
      Traceback (most recent call last):
           ...
      TypeError: a must be an integer
 
-     >>> add_integer(4, None)
+     >>> add_integer(2, None)
      Traceback (most recent call last):
      ...
      TypeError: b must be an integer
