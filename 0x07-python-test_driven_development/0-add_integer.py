@@ -1,22 +1,21 @@
 #!/usr/bin/python3
 """
-Project for studying doctests in python
+Returns an integer: the addition of a and b
+This function validates the type int or float
+Otherwise, raise error, Cast values too
 """
 
 
 def add_integer(a, b=98):
-    """Function that adds 2 integers
-    Args are a and b, and they can be int or float
-    If Args are invalid type, a TypeError is raised"""
-
-    if not isinstance(a, int) and not isinstance(a, float):
-        raise TypeError("a must be an integer")
-    if not isinstance(b, int) and not isinstance(b, float):
-        raise TypeError("b must be an integer")
-
-    if isinstance(a, float):
+    """
+    Adds the input integers
+    """
+    if (type(a) is float):
         a = int(a)
-    if isinstance(b, float):
+    if (type(b) is float):
         b = int(b)
-
-    return int(a + b)
+    if not ((type(a) is int) or (type(a) is float)):
+        raise TypeError('a must be an integer')
+    if not ((type(b) is int) or (type(b) is float)):
+        raise TypeError('b must be an integer')
+    return (a + b)
