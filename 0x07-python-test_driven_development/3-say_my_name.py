@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-Program that prints the name
+Program that prints the name with edge cases
 """
 
 
 def say_my_name(first_name, last_name=""):
-    """ Function that prints the name """
+    """ Function that prints our name """
     if not (isinstance(first_name, str)):
         raise TypeError("first_name must be a string")
     if not (isinstance(last_name, str)):
