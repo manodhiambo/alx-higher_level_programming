@@ -1,128 +1,152 @@
-===============================
- Testing module 3-say_my_name.py
-===============================
+====================================
+ Doctest for say_my_name function
+====================================
 
-``say_my_name(first_name, last_name="")`` print our name,
-first_name and last_name must be strings otherwise, raise a TypeError exception
 
-Only Strings
-============
+``say_my_name(first_name, last_name="")`` prints a name in the format
+My name is <first name> <last name>
 
-First, import module and function
+Import function
+=================
 
-        >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
 
-	>>> say_my_name("Kevin", "Odhiambo")
-	My name is Kevin Odhiambo
+Two names as strings
+=============
 
-	>>> say_my_name("Kevin")
-	My name is Kevin
+    >>> say_my_name("Kevin", "Odhiambo")
+    My name is Kevin Odhiambo
 
-	>>> say_my_name("", "")
-	My name is  
+With spaces
 
-	>>> say_my_name("")
-	My name is  
+    >>> say_my_name(' K ', 'O')
+    My name is  K  O
 
-Other types in first_name
-=========================
+Empty Strings
 
-Validate with Integer
+    >>> say_my_name("", "")
+    My name is  
 
-	>>> say_my_name(1, "Kevin")
-	Traceback (most recent call last):
-	    ...
-	TypeError: first_name must be a string
+Invalid first_name
+===================
 
-Validate with List
+As int
 
-	>>> say_my_name([1, 2, 3], "Kevin")
-	Traceback (most recent call last):
-	    ...
-	TypeError: first_name must be a string
+    >>> say_my_name(2, "Odhiambo")
+    Traceback (most recent call last):
+              ...
+    TypeError: first_name must be a string
 
-Validate with tuple
+As float
 
-	>>> say_my_name((1, 2), "Kevin")
-	Traceback (most recent call last):
-	    ...
-	TypeError: first_name must be a string
+    >>> say_my_name(2.0, "Odhiambo")
+    Traceback (most recent call last):
+              ...
+    TypeError: first_name must be a string
 
-Validate with set
+As list
 
-	>>> say_my_name({1, 2, 3}, "Kevin")
-	Traceback (most recent call last):
-	    ...
-	TypeError: first_name must be a string
+    >>> say_my_name(['K', 'e', 'v', 'i', 'n'], "Travolta")
+    Traceback (most recent call last):
+              ...
+    TypeError: first_name must be a string
 
-Validate with dict
+As tuple
 
-	>>> say_my_name({1: "Owino"}, "Kevin")
-	Traceback (most recent call last):
-	    ...
-	TypeError: first_name must be a string
+    >>> say_my_name(['K', 'e', 'v', 'i', 'n'], "Odhiambo")
+    Traceback (most recent call last):
+              ...
+    TypeError: first_name must be a string
 
-Validate with Boolean
+As set
 
-	>>> say_my_name(False, "Odhiambo")
-	Traceback (most recent call last):
-	    ...
-	TypeError: first_name must be a string
+    >>> say_my_name(('P', 'Q'), 'A')
+    Traceback (most recent call last):
+              ...
+    TypeError: first_name must be a string
 
-Other types in last_name
-========================
+As dictionary
 
-Same validation types like in first_name
+    >>> say_my_name({'k': 2}, 'D')
+    Traceback (most recent call last):
+              ...
+    TypeError: first_name must be a string
 
-     >>> say_my_name("Kevin", 1)
-     Traceback (most recent call last):
-	    ...
-     TypeError: last_name must be a string
+As None
 
-     >>> say_my_name("Kevin", [1, 2, 3])
-     Traceback (most recent call last):
-	    ...
-     TypeError: last_name must be a string
+    >>> say_my_name(None, 'M')
+    Traceback (most recent call last):
+              ...
+    TypeError: first_name must be a string
 
-     >>> say_my_name("Kevin", (1, 2, 3))
-     Traceback (most recent call last):
-	    ...
-     TypeError: last_name must be a string
 
-     >>> say_my_name("Kevin", {1, 2, 3})
-     Traceback (most recent call last):
-	    ...
-     TypeError: last_name must be a string
 
-     >>> say_my_name("Kevin", {1: "Owino"})
-     Traceback (most recent call last):
-	    ...
-     TypeError: last_name must be a string
+Invalid last_name
+===================
 
-     >>> say_my_name("Kevin", True)
-     Traceback (most recent call last):
-	    ...
-     TypeError: last_name must be a string
+As int
 
-Other Edge cases like Non-Args
-==============================
+    >>> say_my_name("Odhiambo", 2)
+    Traceback (most recent call last):
+              ...
+    TypeError: last_name must be a string
 
-     >>> say_my_name()
-     Traceback (most recent call last):
-	    ...
-     TypeError: say_my_name() missing 1 required positional argument: 'first_name'
 
-     >>> say_my_name("Kevin", "Odhiambo", "Hello")
-     Traceback (most recent call last):
-	    ...
-     TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+As float
 
-     >>> say_my_name(None, None)
-     Traceback (most recent call last):
-	    ...
-     TypeError: first_name must be a string
+    >>> say_my_name("Odhiambo", 2.0)
+    Traceback (most recent call last):
+              ...
+    TypeError: last_name must be a string
 
-     >>> say_my_name("None", None)
-     Traceback (most recent call last):
-	    ...
-     TypeError: last_name must be a string
+
+As list
+
+    >>> say_my_name("Travolta", ['K', 'e', 'v', 'i', 'n'])
+    Traceback (most recent call last):
+              ...
+    TypeError: last_name must be a string
+
+As tuple
+
+    >>> say_my_name("Odhiambo", ['K', 'e', 'v', 'i', 'n'])
+    Traceback (most recent call last):
+              ...
+    TypeError: last_name must be a string
+
+As set
+
+    >>> say_my_name('K', ('A', 'D'))
+    Traceback (most recent call last):
+              ...
+    TypeError: last_name must be a string
+
+As dictionary
+
+    >>> say_my_name('K', {'g': 2})
+    Traceback (most recent call last):
+              ...
+    TypeError: last_name must be a string
+
+As None
+
+    >>> say_my_name('A', None)
+    Traceback (most recent call last):
+              ...
+    TypeError: last_name must be a string
+
+
+Missing Arguments
+===================
+
+By default last_name will be empty
+
+    >>> say_my_name("Kevin")
+    My name is Kevin
+
+No arguments given
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+              ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
