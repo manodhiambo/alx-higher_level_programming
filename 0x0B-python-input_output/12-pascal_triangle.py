@@ -2,8 +2,7 @@
 
 
 def pascal_triangle(n):
-    """ Function for creating a pascal triangle as a list of lists
-    n: number of rows
+    """ Function for creating a pascal triangle as a list of integers
     returns empty list if n <= 0
     """
     if n <= 0:
