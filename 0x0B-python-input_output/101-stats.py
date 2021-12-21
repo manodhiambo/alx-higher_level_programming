@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-""" A program that computes the metrics """
+""" script that reads stdin line by line and computes metrics """
 
 import sys
 
-""" A script that reads stdin line by line and computes metrics"""
+
 def printsts(dic, size):
     """ Prints information """
     print("File size: {:d}".format(size))
