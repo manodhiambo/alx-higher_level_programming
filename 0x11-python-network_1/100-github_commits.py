@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ A script that sends a POST request to Github repo API """
 import requests
 from sys import argv
