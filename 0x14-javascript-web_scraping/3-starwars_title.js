@@ -8,7 +8,7 @@ You must use the module request */
 
 const arg = process.argv;
 const movieId = arg[2];
-const requestURL = 'https://swapi-api.hbtn.io/api/films/:id' + movieId;
+const requestURL = 'https://swapi-api.hbtn.io/api/films/' + movieId;
 const req = require('request');
 req(requestURL, function (error, response, body) {
   if (error) {
